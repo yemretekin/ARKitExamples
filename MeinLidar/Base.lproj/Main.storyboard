@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Evt-nO-gnM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Confidence Map View Controller-->
+        <scene sceneID="9bH-vd-uGm">
+            <objects>
+                <viewController id="Q0f-m9-wvZ" customClass="ConfidenceMapViewController" customModule="MeinLidar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FpC-fk-rLF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUC-wr-bYo">
+                                <rect key="frame" x="0.0" y="13" width="393" height="816"/>
+                            </arView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bY2-qC-bmR">
+                                <rect key="frame" x="50" y="71" width="293" height="700"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="700" id="g3D-cq-xmK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Six-dz-u3d"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bY2-qC-bmR" firstAttribute="centerY" secondItem="PUC-wr-bYo" secondAttribute="centerY" id="HVZ-dN-I0s"/>
+                            <constraint firstItem="Six-dz-u3d" firstAttribute="bottom" secondItem="PUC-wr-bYo" secondAttribute="bottom" constant="13" id="Hmy-P9-jcx"/>
+                            <constraint firstItem="PUC-wr-bYo" firstAttribute="leading" secondItem="Six-dz-u3d" secondAttribute="leading" id="SGn-m6-2Or"/>
+                            <constraint firstItem="bY2-qC-bmR" firstAttribute="centerY" secondItem="FpC-fk-rLF" secondAttribute="centerY" id="WuF-42-EQg"/>
+                            <constraint firstItem="bY2-qC-bmR" firstAttribute="centerX" secondItem="PUC-wr-bYo" secondAttribute="centerX" id="mm5-SE-JeS"/>
+                            <constraint firstItem="bY2-qC-bmR" firstAttribute="leading" secondItem="Six-dz-u3d" secondAttribute="leading" constant="50" id="mpM-sy-1Zq"/>
+                            <constraint firstItem="bY2-qC-bmR" firstAttribute="centerX" secondItem="FpC-fk-rLF" secondAttribute="centerX" id="yVw-fT-kdR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KF3-aC-mEJ"/>
+                    <connections>
+                        <outlet property="arView" destination="PUC-wr-bYo" id="fjg-Iv-yl9"/>
+                        <outlet property="imageView" destination="bY2-qC-bmR" id="2Gc-az-OCe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTN-ch-k1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352" y="-452"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="H93-vC-uWd">
+            <objects>
+                <viewController id="Evt-nO-gnM" customClass="ViewController" customModule="MeinLidar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3ri-rm-Qep">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aH-Py-ATB">
+                                <rect key="frame" x="16" y="208" width="361" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="05g-TA-LRl"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Depth Map"/>
+                                <connections>
+                                    <action selector="depthMapTapped:" destination="Evt-nO-gnM" eventType="touchUpInside" id="pkF-c2-QGH"/>
+                                    <segue destination="6cs-ly-YtP" kind="show" identifier="toDepth" id="Rsu-Ep-baE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdw-m5-b7f">
+                                <rect key="frame" x="16" y="316" width="361" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="aZf-Vt-bNn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Confidence Map"/>
+                                <connections>
+                                    <action selector="confidenceMapTapped:" destination="Evt-nO-gnM" eventType="touchUpInside" id="3UA-pO-OxS"/>
+                                    <segue destination="Q0f-m9-wvZ" kind="show" identifier="toConfidence" id="L0z-fU-kho"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0e9-9G-tgB">
+                                <rect key="frame" x="16" y="425" width="361" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="dt2-mR-5jL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Body Distance"/>
+                                <connections>
+                                    <segue destination="NOa-Zw-Ijm" kind="show" id="7ib-3b-rJB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9q-W2-yYW">
+                                <rect key="frame" x="16" y="523" width="361" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="xLv-oH-cF9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Estimate Body Height"/>
+                                <connections>
+                                    <segue destination="PGP-Oe-zGt" kind="show" id="NQK-Wj-9B1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KNk-3e-5zf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rdw-m5-b7f" firstAttribute="centerX" secondItem="3ri-rm-Qep" secondAttribute="centerX" id="4FY-49-62C"/>
+                            <constraint firstItem="0e9-9G-tgB" firstAttribute="trailing" secondItem="Rdw-m5-b7f" secondAttribute="trailing" id="4TB-4y-pNj"/>
+                            <constraint firstItem="0e9-9G-tgB" firstAttribute="trailing" secondItem="b9q-W2-yYW" secondAttribute="trailing" id="K7f-az-73W"/>
+                            <constraint firstItem="1aH-Py-ATB" firstAttribute="leading" secondItem="KNk-3e-5zf" secondAttribute="leading" constant="16" id="S02-g5-R1G"/>
+                            <constraint firstItem="KNk-3e-5zf" firstAttribute="trailing" secondItem="1aH-Py-ATB" secondAttribute="trailing" constant="16" id="TNg-RD-kjO"/>
+                            <constraint firstItem="KNk-3e-5zf" firstAttribute="trailing" secondItem="Rdw-m5-b7f" secondAttribute="trailing" constant="16" id="UBg-wi-HKX"/>
+                            <constraint firstItem="1aH-Py-ATB" firstAttribute="trailing" secondItem="Rdw-m5-b7f" secondAttribute="trailing" id="UZj-og-7hJ"/>
+                            <constraint firstItem="1aH-Py-ATB" firstAttribute="centerX" secondItem="3ri-rm-Qep" secondAttribute="centerX" id="XbN-jg-SG3"/>
+                            <constraint firstItem="0e9-9G-tgB" firstAttribute="top" secondItem="Rdw-m5-b7f" secondAttribute="bottom" constant="54" id="Z5m-GP-Bnr"/>
+                            <constraint firstItem="Rdw-m5-b7f" firstAttribute="leading" secondItem="KNk-3e-5zf" secondAttribute="leading" constant="16" id="beg-2Y-pag"/>
+                            <constraint firstItem="Rdw-m5-b7f" firstAttribute="top" secondItem="1aH-Py-ATB" secondAttribute="bottom" constant="53" id="jQ4-rK-paf"/>
+                            <constraint firstItem="1aH-Py-ATB" firstAttribute="leading" secondItem="Rdw-m5-b7f" secondAttribute="leading" id="jym-oJ-Po5"/>
+                            <constraint firstItem="0e9-9G-tgB" firstAttribute="leading" secondItem="b9q-W2-yYW" secondAttribute="leading" id="kfy-h4-cCl"/>
+                            <constraint firstItem="1aH-Py-ATB" firstAttribute="top" secondItem="KNk-3e-5zf" secondAttribute="top" constant="149" id="ltY-hi-ll4"/>
+                            <constraint firstItem="b9q-W2-yYW" firstAttribute="top" secondItem="0e9-9G-tgB" secondAttribute="bottom" constant="43" id="mSe-2M-EiT"/>
+                            <constraint firstItem="0e9-9G-tgB" firstAttribute="leading" secondItem="Rdw-m5-b7f" secondAttribute="leading" id="pYe-ns-Bv0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="drr-KV-jYv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehs-WU-OPS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="399.23664122137404" y="-917.6056338028169"/>
+        </scene>
+        <!--Depth Map View Controller-->
+        <scene sceneID="qmD-wb-gxA">
+            <objects>
+                <viewController id="6cs-ly-YtP" customClass="DepthMapViewController" customModule="MeinLidar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8ye-1e-a6k">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1v-eV-wYj">
+                                <rect key="frame" x="0.0" y="13" width="393" height="816"/>
+                            </arView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cv4-uc-G3b">
+                                <rect key="frame" x="50" y="71" width="293" height="700"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="700" id="MOL-nk-24U"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QJ6-U7-zNv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Cv4-uc-G3b" firstAttribute="centerY" secondItem="8ye-1e-a6k" secondAttribute="centerY" id="9J2-e5-Y9e"/>
+                            <constraint firstItem="Cv4-uc-G3b" firstAttribute="centerX" secondItem="8ye-1e-a6k" secondAttribute="centerX" id="HiP-yZ-DMA"/>
+                            <constraint firstItem="Cv4-uc-G3b" firstAttribute="centerY" secondItem="V1v-eV-wYj" secondAttribute="centerY" id="Y4g-jk-sor"/>
+                            <constraint firstItem="QJ6-U7-zNv" firstAttribute="bottom" secondItem="V1v-eV-wYj" secondAttribute="bottom" constant="13" id="ch3-zU-RsI"/>
+                            <constraint firstItem="Cv4-uc-G3b" firstAttribute="centerX" secondItem="V1v-eV-wYj" secondAttribute="centerX" id="fbn-jZ-Ysa"/>
+                            <constraint firstItem="Cv4-uc-G3b" firstAttribute="leading" secondItem="QJ6-U7-zNv" secondAttribute="leading" constant="50" id="gQN-ys-nhU"/>
+                            <constraint firstItem="V1v-eV-wYj" firstAttribute="leading" secondItem="QJ6-U7-zNv" secondAttribute="leading" id="nck-1W-LQk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="D9r-hd-c7A"/>
+                    <connections>
+                        <outlet property="arView" destination="V1v-eV-wYj" id="UxF-hh-6GP"/>
+                        <outlet property="imageView" destination="Cv4-uc-G3b" id="8Pm-tl-XJ9"/>
+                        <outlet property="imageViewHeight" destination="MOL-nk-24U" id="rs1-oU-KZz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qRw-4x-z02" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352" y="-1168"/>
+        </scene>
+        <!--Body Distance View Controller-->
+        <scene sceneID="B3N-w2-qdL">
+            <objects>
+                <viewController id="NOa-Zw-Ijm" customClass="BodyDistanceViewController" customModule="MeinLidar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gpO-o5-xzR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6M-GD-CNZ">
+                                <rect key="frame" x="0.0" y="13" width="393" height="816"/>
+                            </arView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mo2-ap-D1R">
+                                <rect key="frame" x="50" y="71" width="293" height="700"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="700" id="3uI-4S-LCy"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="daC-aw-Fz6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mo2-ap-D1R" firstAttribute="centerY" secondItem="gpO-o5-xzR" secondAttribute="centerY" id="8iI-b1-amJ"/>
+                            <constraint firstItem="Mo2-ap-D1R" firstAttribute="leading" secondItem="daC-aw-Fz6" secondAttribute="leading" constant="50" id="PBe-cE-Kfx"/>
+                            <constraint firstItem="daC-aw-Fz6" firstAttribute="bottom" secondItem="U6M-GD-CNZ" secondAttribute="bottom" constant="13" id="Uli-ai-gDh"/>
+                            <constraint firstItem="Mo2-ap-D1R" firstAttribute="centerY" secondItem="U6M-GD-CNZ" secondAttribute="centerY" id="bMa-16-2k5"/>
+                            <constraint firstItem="Mo2-ap-D1R" firstAttribute="centerX" secondItem="gpO-o5-xzR" secondAttribute="centerX" id="gX5-Wf-q1e"/>
+                            <constraint firstItem="Mo2-ap-D1R" firstAttribute="centerX" secondItem="U6M-GD-CNZ" secondAttribute="centerX" id="khy-hw-dau"/>
+                            <constraint firstItem="U6M-GD-CNZ" firstAttribute="leading" secondItem="daC-aw-Fz6" secondAttribute="leading" id="uMF-3n-Lkb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rrs-eO-qH1"/>
+                    <connections>
+                        <outlet property="arView" destination="U6M-GD-CNZ" id="kye-Nw-j5I"/>
+                        <outlet property="imageView" destination="Mo2-ap-D1R" id="aek-De-Kfk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Win-Js-iOb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352" y="227"/>
+        </scene>
+        <!--Estimate Body Height View Controller-->
+        <scene sceneID="8y2-0g-eIJ">
+            <objects>
+                <viewController id="PGP-Oe-zGt" customClass="EstimateBodyHeightViewController" customModule="MeinLidar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rRY-NG-26g">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tim-ea-fIl">
+                                <rect key="frame" x="0.0" y="13" width="393" height="816"/>
+                            </arView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZLg-FA-NqV">
+                                <rect key="frame" x="50" y="71" width="293" height="700"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="700" id="6SJ-LB-JYB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kde-BQ-Yjn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZLg-FA-NqV" firstAttribute="centerX" secondItem="rRY-NG-26g" secondAttribute="centerX" id="04h-Bm-jIu"/>
+                            <constraint firstItem="ZLg-FA-NqV" firstAttribute="centerX" secondItem="tim-ea-fIl" secondAttribute="centerX" id="0bl-5Z-4cA"/>
+                            <constraint firstItem="ZLg-FA-NqV" firstAttribute="leading" secondItem="Kde-BQ-Yjn" secondAttribute="leading" constant="50" id="9sk-no-RID"/>
+                            <constraint firstItem="ZLg-FA-NqV" firstAttribute="centerY" secondItem="rRY-NG-26g" secondAttribute="centerY" id="QB9-2O-8zR"/>
+                            <constraint firstItem="Kde-BQ-Yjn" firstAttribute="bottom" secondItem="tim-ea-fIl" secondAttribute="bottom" constant="13" id="TUc-Cw-zek"/>
+                            <constraint firstItem="ZLg-FA-NqV" firstAttribute="centerY" secondItem="tim-ea-fIl" secondAttribute="centerY" id="new-F6-LO8"/>
+                            <constraint firstItem="tim-ea-fIl" firstAttribute="leading" secondItem="Kde-BQ-Yjn" secondAttribute="leading" id="peh-3V-7Bm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ad4-N7-2c5"/>
+                    <connections>
+                        <outlet property="arView" destination="tim-ea-fIl" id="hNN-Sq-xqi"/>
+                        <outlet property="imageView" destination="ZLg-FA-NqV" id="Nyc-d7-Wyc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jnt-vn-GjC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352" y="921"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
