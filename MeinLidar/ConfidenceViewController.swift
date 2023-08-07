@@ -16,11 +16,14 @@ class ConfidenceMapViewController: UIViewController, ARSessionDelegate {
     @IBOutlet weak var imageView: UIImageView!
 
     var orientation: UIInterfaceOrientation {
-        guard let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation else {
-            fatalError()
+        guard let orientation = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first?.interfaceOrientation else {
+                fatalError()
         }
         return orientation
     }
+    
     @IBOutlet weak var imageViewHeight: NSLayoutConstraint!
     lazy var imageViewSize: CGSize = {
         CGSize(width: view.bounds.size.width, height: imageViewHeight.constant)

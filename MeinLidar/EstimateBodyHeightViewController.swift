@@ -14,9 +14,13 @@ class EstimateBodyHeightViewController: UIViewController, ARSessionDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var resultLabel: UILabel!
+    
     var orientation: UIInterfaceOrientation {
-        guard let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation else {
-            fatalError()
+        guard let orientation = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first?.interfaceOrientation else {
+                fatalError()
         }
         return orientation
     }
@@ -25,6 +29,7 @@ class EstimateBodyHeightViewController: UIViewController, ARSessionDelegate {
         super.viewDidLoad()
         
         let configuration = ARBodyTrackingConfiguration()
+        configuration.automaticSkeletonScaleEstimationEnabled = false
         arView?.session.delegate = self
         arView?.session.run(configuration)
     }
@@ -46,8 +51,10 @@ class EstimateBodyHeightViewController: UIViewController, ARSessionDelegate {
             }
             
             let toesJointPos = skeleton.jointModelTransforms[10].columns.3.y
+            print("Ayak noktası \(toesJointPos)")
             let headJointPos = skeleton.jointModelTransforms[51].columns.3.y
-            
+            print("Kafa noktası \(headJointPos)")
+            resultLabel.text = String(headJointPos - toesJointPos)
             print(headJointPos - toesJointPos)
         }
     }

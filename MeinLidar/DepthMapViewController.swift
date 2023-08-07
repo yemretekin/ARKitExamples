@@ -15,8 +15,10 @@ class DepthMapViewController: UIViewController, ARSessionDelegate {
     @IBOutlet var arView: ARView?
     
     var orientation: UIInterfaceOrientation {
-        guard let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation else {
-            fatalError()
+        guard let orientation = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first?.interfaceOrientation else {
+                fatalError()
         }
         return orientation
     }
@@ -52,8 +54,8 @@ class DepthMapViewController: UIViewController, ARSessionDelegate {
             
             CVPixelBufferLockBaseAddress(depthData, .readOnly)
             let floatBuffer = unsafeBitCast(CVPixelBufferGetBaseAddress(depthData), to: UnsafeMutablePointer<Float32>.self)
-            let depthValue = floatBuffer[dotY * depthWidth + dotX]
             CVPixelBufferUnlockBaseAddress(depthData, .readOnly)
+            let depthValue = floatBuffer[dotY * depthWidth + dotX]
             
             print("Depth value at the center (x: \(dotX), y: \(dotY)): \(depthValue)")
             
