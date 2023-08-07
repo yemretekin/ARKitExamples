@@ -14,6 +14,7 @@
 		DD7C2D8F2A7A8A6E00ABE41F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7C2D8E2A7A8A6E00ABE41F /* Assets.xcassets */; };
 		DD7C2D922A7A8A6E00ABE41F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7C2D902A7A8A6E00ABE41F /* LaunchScreen.storyboard */; };
 		DD90D1232A7B9C6E00AC10AD /* ARFrame+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90D1222A7B9C6E00AC10AD /* ARFrame+Extension.swift */; };
+		DDB130612A81287500E4ADCE /* HandMovementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB130602A81287500E4ADCE /* HandMovementViewController.swift */; };
 		DDEC078F2A7BA8CC000D2A4E /* ConfidenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC078E2A7BA8CC000D2A4E /* ConfidenceViewController.swift */; };
 		DDEC07912A7BAA6F000D2A4E /* DepthMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC07902A7BAA6F000D2A4E /* DepthMapViewController.swift */; };
 		DDEC07932A7BDFFC000D2A4E /* BodyDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC07922A7BDFFC000D2A4E /* BodyDistanceViewController.swift */; };
@@ -30,6 +31,7 @@
 		DD7C2D912A7A8A6E00ABE41F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD7C2D932A7A8A6E00ABE41F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD90D1222A7B9C6E00AC10AD /* ARFrame+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARFrame+Extension.swift"; sourceTree = "<group>"; };
+		DDB130602A81287500E4ADCE /* HandMovementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandMovementViewController.swift; sourceTree = "<group>"; };
 		DDEC078E2A7BA8CC000D2A4E /* ConfidenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfidenceViewController.swift; sourceTree = "<group>"; };
 		DDEC07902A7BAA6F000D2A4E /* DepthMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthMapViewController.swift; sourceTree = "<group>"; };
 		DDEC07922A7BDFFC000D2A4E /* BodyDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyDistanceViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				DDEC07902A7BAA6F000D2A4E /* DepthMapViewController.swift */,
 				DDEC07922A7BDFFC000D2A4E /* BodyDistanceViewController.swift */,
 				DDEC07942A7BE054000D2A4E /* EstimateBodyHeightViewController.swift */,
+				DDB130602A81287500E4ADCE /* HandMovementViewController.swift */,
 			);
 			path = MeinLidar;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD90D1232A7B9C6E00AC10AD /* ARFrame+Extension.swift in Sources */,
+				DDB130612A81287500E4ADCE /* HandMovementViewController.swift in Sources */,
 				DD7C2D8A2A7A8A6D00ABE41F /* ViewController.swift in Sources */,
 				DDEC078F2A7BA8CC000D2A4E /* ConfidenceViewController.swift in Sources */,
 				DDEC07952A7BE054000D2A4E /* EstimateBodyHeightViewController.swift in Sources */,
