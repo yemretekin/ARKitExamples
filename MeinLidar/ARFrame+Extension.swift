@@ -13,8 +13,8 @@ extension ARFrame {
         let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
         return UIImage(ciImage: screenTransformed(ciImage: ciImage, orientation: orientation, viewPort: viewPort))
     }
-
-    func ConfidenceMapTransformedImage(orientation: UIInterfaceOrientation, viewPort: CGRect) -> UIImage? {
+    
+    func confidenceMapTransformedImage(orientation: UIInterfaceOrientation, viewPort: CGRect) -> UIImage? {
         guard let pixelBuffer = self.sceneDepth?.confidenceMap,
               let ciImage = confidenceMapToCIImage(pixelBuffer: pixelBuffer) else { return nil }
         
